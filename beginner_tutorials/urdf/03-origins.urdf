@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="origins">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.19 0.19 0.09"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="link_1">
+    <visual>
+      <geometry>
+        <cylinder length="0.08" radius="0.095"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.042"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_link_1" type="fixed">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0 0 0.042"/>
+  </joint>
+
+</robot>
+

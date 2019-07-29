@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot name="materials">
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.19 0.19 0.09"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <link name="link_1">
+    <visual>
+      <geometry>
+        <cylinder length="0.08" radius="0.095"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.042"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_link_1" type="fixed">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0 0 0.042"/>
+  </joint>
+
+  <link name="link_2">
+    <visual>
+      <geometry>
+        <box size="0.08 0.065 0.24"/>
+      </geometry>
+      <origin rpy="0 0.78535 0" xyz="0.015 0 0.1"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_link_2" type="fixed">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.015 0 0.1"/>
+  </joint>
+
+  <link name="link_3">
+     <visual>
+       <geometry>
+         <box size="0.08 0.065 0.24"/>
+       </geometry>
+       <origin rpy="0 1.57075 0" xyz="0.1 0 0.12"/>
+       <material name="white"/>
+     </visual>
+   </link>
+
+   <joint name="base_to_link_3" type="fixed">
+     <parent link="link_2"/>
+     <child link="link_3"/>
+     <origin xyz="0.1 0 0.12"/>
+   </joint>
+
+</robot>
